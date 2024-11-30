@@ -1,12 +1,10 @@
 import { Context } from "https://deno.land/x/oak@v17.1.2/mod.ts";
-import { getAllStatues } from "../services/index.ts";
 
-export const fetchStatuses = async (ctx: Context) => {
+export const healthCheck = (ctx: Context) => {
   try {
-    const statuses = await getAllStatues();
     ctx.response.body = {
       success: true,
-      statuses,
+      message: "Orders API up and running!",
     };
 
     ctx.response.status = 200;

@@ -8,7 +8,7 @@ export const getAllOrders = async () => {
     );
     return result.rows;
   } catch (error) {
-    console.error("Orders Service: Error fetching all orders", error);
+    console.error("Orders Service: Error fetching all orders! ", error);
     throw new Error("Unable to retrieve all orders");
   }
 };
